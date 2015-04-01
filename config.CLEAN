@@ -101,7 +101,6 @@ chatnets = {
   Ubuntu = { type = "IRC"; };
   FreeNode = {
     type = "IRC";
-#    autosendcmd = "MSG NickServ IDENTIFY leafeed; /MODE nick -i";
   };
 };
 
@@ -296,6 +295,12 @@ statusbar = {
 settings = {
   core = { real_name = "Ed Leafe"; user_name = "edleafe"; nick = "ed"; };
   "fe-text" = { actlist_sort = "refnum"; };
+  "fe-common/core" = {
+    beep_when_window_active = "yes";
+    beep_when_away = "yes";
+    beep_msg_level = "MSGS NOTICES DCC DCCMSGS HILIGH";
+    bell_beeps = "yes";
+  };
 };
 ignores = (
   {
@@ -315,3 +320,107 @@ ignores = (
   }
 );
 keyboard = ( { key = "meta-x"; id = "command"; data = "window last"; } );
+windows = {
+  1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
+  2 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#openstack";
+        tag = "FreeNode";
+      }
+    );
+  };
+  3 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#openstack-dev";
+        tag = "FreeNode";
+      }
+    );
+  };
+  4 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#openstack-nova";
+        tag = "FreeNode";
+      }
+    );
+  };
+  5 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#openstack-meeting";
+        tag = "FreeNode";
+      }
+    );
+  };
+  6 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#openstack-meeting-alt";
+        tag = "FreeNode";
+      }
+    );
+  };
+  7 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#openstack-meeting-3";
+        tag = "FreeNode";
+      }
+    );
+  };
+  8 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#openstack-sdks";
+        tag = "FreeNode";
+      }
+    );
+  };
+  9 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#rackspace";
+        tag = "FreeNode";
+      }
+    );
+  };
+  10 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#dabo";
+        tag = "FreeNode";
+      }
+    );
+  };
+  11 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#openstack-101";
+        tag = "FreeNode";
+      }
+    );
+  };
+  12 = { name = "hilight"; };
+};

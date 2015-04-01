@@ -108,7 +108,7 @@ sub sig_public {
   $color = "0".$color if ($color < 10);
   ########## BEGIN EDIT ##############
   if ($nick eq "openstackgerrit") {
-    $color = "07";
+    $color = "14";
     $server->command('/^format pubmsg %b<%w$2'.chr(3).$color.'$[-15]0%b>%K| '.chr(3).$color.' $1%n');
   } else {
     $server->command('/^format pubmsg %b<%w$2'.chr(3).$color.'$[-15]0%b>%K|%n $1');
