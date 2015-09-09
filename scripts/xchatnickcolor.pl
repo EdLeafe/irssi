@@ -82,6 +82,22 @@ sub simple_hash {
   return $counter;
 }
 
+sub write_file {
+  my ($txt) = @_;
+  my $fh = '/tmp/nick_out.txt';
+  open(my $fh, '>>', '/tmp/nick_out.txt');
+  print $txt."\n";
+  close $fh;
+}
+
+sub write_nick {
+  my ($nick, $target) = @_;
+  my $fh = '/tmp/nick_out.txt';
+  open(my $fh, '>>', '/tmp/nick_out.txt');
+  print "Target ".$target." Nick: <".$nick.">";
+  close $fh;
+}
+
 # FIXME: breaks /HILIGHT etc.
 sub sig_public {
   my ($server, $msg, $nick, $address, $target) = @_;
@@ -107,7 +123,13 @@ sub sig_public {
 
   $color = "0".$color if ($color < 10);
   ########## BEGIN EDIT ##############
-  if ($nick eq "openstackgerrit") {
+
+#  write_nick($nick, $target);
+
+  if ($nick eq "openstack") {
+    $color = "11";
+    $server->command('/^format pubmsg %b<%w$2'.chr(3).$color.'$[-15]0%b>%K| '.chr(3).$color.' $1%n');
+  } elsif ($nick eq "openstackgerrit") {
     $color = "14";
     $server->command('/^format pubmsg %b<%w$2'.chr(3).$color.'$[-15]0%b>%K| '.chr(3).$color.' $1%n');
   } else {
